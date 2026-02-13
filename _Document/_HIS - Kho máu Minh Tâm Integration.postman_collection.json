@@ -1,0 +1,348 @@
+{
+  "info": {
+    "_postman_id": "dea3f227-8dfd-4e0a-a6bd-41267f5bb966",
+    "name": "_HIS - Kho máu Minh Tâm Integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15128021"
+  },
+  "item": [
+    {
+      "name": "Get Inventory",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"Rh\": \"+\",\n  \"ABO\": \"B\",\n  \"ElementID\": \"HTDL\",\n  \"Volume\": 150\n}"
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/LisReceiver/web/GetInventory",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "LisReceiver",
+            "web",
+            "GetInventory"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Inventory (ALL)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/LisReceiver/web/GetInventory",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "LisReceiver",
+                "web",
+                "GetInventory"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 09 Feb 2026 08:49:16 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ErrorMessage\": null,\n    \"IsSuccess\": true,\n    \"InventoryInfo\": [\n        {\n            \"ABO\": \"A \",\n            \"BooldPlan\": 553,\n            \"ElementID\": \"5350\",\n            \"ElementName\": \"Khối hồng cầu từ 350 ml máu toàn phần (Đã bao gồm chi phí xét nghiệm NAT và chi phí xét nghiệm sàng lọc kháng thể bất thường)\",\n            \"Quantity\": 23,\n            \"Rh\": \"+\",\n            \"Volume\": 350\n        },\n        {\n            \"ABO\": \"AB\",\n            \"BooldPlan\": 553,\n            \"ElementID\": \"5350\",\n            \"ElementName\": \"Khối hồng cầu từ 350 ml máu toàn phần (Đã bao gồm chi phí xét nghiệm NAT và chi phí xét nghiệm sàng lọc kháng thể bất thường)\",\n            \"Quantity\": 1,\n            \"Rh\": \"+\",\n            \"Volume\": 350\n        },\n        {\n            \"ABO\": \"B \",\n            \"BooldPlan\": 553,\n            \"ElementID\": \"5350\",\n            \"ElementName\": \"Khối hồng cầu từ 350 ml máu toàn phần (Đã bao gồm chi phí xét nghiệm NAT và chi phí xét nghiệm sàng lọc kháng thể bất thường)\",\n            \"Quantity\": 18,\n            \"Rh\": \"+\",\n            \"Volume\": 350\n        },\n        {\n            \"ABO\": \"O \",\n            \"BooldPlan\": 553,\n            \"ElementID\": \"5350\",\n            \"ElementName\": \"Khối hồng cầu từ 350 ml máu toàn phần (Đã bao gồm chi phí xét nghiệm NAT và chi phí xét nghiệm sàng lọc kháng thể bất thường)\",\n            \"Quantity\": 20,\n            \"Rh\": \"+\",\n            \"Volume\": 350\n        },\n        {\n            \"ABO\": \"A \",\n            \"BooldPlan\": 42,\n            \"ElementID\": \"5356\",\n            \"ElementName\": \"Huyết tương tươi đông lạnh 200 ml\",\n            \"Quantity\": 36,\n            \"Rh\": \"+\",\n            \"Volume\": 200\n        },\n        {\n            \"ABO\": \"AB\",\n            \"BooldPlan\": 42,\n            \"ElementID\": \"5356\",\n            \"ElementName\": \"Huyết tương tươi đông lạnh 200 ml\",\n            \"Quantity\": 21,\n            \"Rh\": \"+\",\n            \"Volume\": 200\n        },\n        {\n            \"ABO\": \"B \",\n            \"BooldPlan\": 42,\n            \"ElementID\": \"5356\",\n            \"ElementName\": \"Huyết tương tươi đông lạnh 200 ml\",\n            \"Quantity\": 36,\n            \"Rh\": \"+\",\n            \"Volume\": 200\n        },\n        {\n            \"ABO\": \"O \",\n            \"BooldPlan\": 42,\n            \"ElementID\": \"5356\",\n            \"ElementName\": \"Huyết tương tươi đông lạnh 200 ml\",\n            \"Quantity\": 37,\n            \"Rh\": \"+\",\n            \"Volume\": 200\n        }\n    ]\n}"
+        },
+        {
+          "name": "Get Inventory (Success)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Rh\": \"+\",\n  \"ABO\": \"B\",\n  \"ElementID\": \"HTDL\",\n  \"Volume\": 150\n}"
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/LisReceiver/web/GetInventory",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "LisReceiver",
+                "web",
+                "GetInventory"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "private"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-IIS/10.0"
+            },
+            {
+              "key": "X-AspNet-Version",
+              "value": "4.0.30319"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "ASP.NET"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 09:25:19 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1913"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"ErrorMessage\": null,\n    \"IsSuccess\": true,\n    \"InventoryInfo\": [\n        {\n            \"ABO\": \"B\",\n            \"Rh\": \"+\",\n            \"ElementID\": \"HTDL\",\n            \"ElementName\": \"HUYẾT TƯƠNG TƯƠI ĐÔNG LẠNH\",\n            \"Volume\": 150,\n            \"Quantity\": 3\n        }\n    ]\n}"
+        },
+        {
+          "name": "Get Inventory (Success 1)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ABO\": \"A \",\n    \"Rh\": \"+\",\n    \"ElementID\": \"5350\",\n    \"Volume\": 350\n}"
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/LisReceiver/web/GetInventory",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "LisReceiver",
+                "web",
+                "GetInventory"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 09 Feb 2026 08:49:16 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"errorMessage\": null,\n    \"isSuccess\": true,\n    \"inventoryInfo\": [\n        {\n            \"abo\": \"B\",\n            \"rh\": \"+\",\n            \"elementID\": \"HTDL\",\n            \"elementName\": \"HUYẾT TƯƠNG TƯƠI ĐÔNG LẠNH\",\n            \"volume\": 150,\n            \"quantity\": 3\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Save Patient Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"PID\": \"19046237\",\n  \"OrderID\": \"B1_16PL1900215\",\n  \"PatientName\": \"LONG PTTT\",\n  \"TREATMENT_CODE\": \"25112408362323637902597\",\n  \"OrderDate\": \"2022-04-14 15:12:01\",\n  \"Age\": \"18\",\n  \"Sex\": \"M\",\n  \"BloodGroup\": \"A\",\n  \"Rh\": \"+\",\n  \"DoctorID\": \"43809\",\n  \"DoctorName\": \"Nguyễn Lê Tuấn Kiệt\",\n  \"ListOrder\": [\n    {\"Quantity\": \"1\", \"ElementID\": \"HTDL\", \"Volume\": 150}\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{BaseUrl}}/LisReceiver/web/SavePatient",
+          "host": [
+            "{{BaseUrl}}"
+          ],
+          "path": [
+            "LisReceiver",
+            "web",
+            "SavePatient"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Save Patient Order (success)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"PID\": \"19046237\",\n  \"OrderID\": \"B1_16PL1900215\",\n  \"PatientName\": \"LONG PTTT\",\n  \"TREATMENT_CODE\": \"25112408362323637902597\",\n  \"OrderDate\": \"2022-04-14 15:12:01\",\n  \"Age\": \"18\",\n  \"Sex\": \"M\",\n  \"BloodGroup\": \"A\",\n  \"Rh\": \"+\",\n  \"DoctorID\": \"43809\",\n  \"DoctorName\": \"Nguyễn Lê Tuấn Kiệt\",\n  \"ListOrder\": [\n    {\"Quantity\": \"1\", \"ElementID\": \"HTDL\", \"Volume\": 300},\n    {\"Quantity\": \"2\", \"ElementID\": \"HCL\", \"Volume\": 250}\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{BaseUrl}}/LisReceiver/web/SavePatient",
+              "host": [
+                "{{BaseUrl}}"
+              ],
+              "path": [
+                "LisReceiver",
+                "web",
+                "SavePatient"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Cache-Control",
+              "value": "private"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Server",
+              "value": "Microsoft-IIS/10.0"
+            },
+            {
+              "key": "X-AspNet-Version",
+              "value": "4.0.30319"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "ASP.NET"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 09:26:17 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1912"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"IsSuccess\": true,\n    \"ErrorMessage\": null\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BaseUrl",
+      "value": ""
+    }
+  ]
+}

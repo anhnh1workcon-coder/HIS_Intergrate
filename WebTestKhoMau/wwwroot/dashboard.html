@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quản lý Kho máu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2.5em;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+            margin: 0 2px;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #f44336;
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #667eea;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-content {
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        th {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            color: #333;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            color: #555;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #f0f0f0;
+        }
+
+        .actions {
+            white-space: nowrap;
+        }
+
+        .record-count {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .success {
+            background: #efe;
+            border: 1px solid #cfc;
+            color: #3c3;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .empty {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-footer {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        #message {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #message.success {
+            background: #efe;
+            border: 1px solid #cfc;
+            color: #3c3;
+        }
+
+        #message.error {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+        }
+
+        /* Tab Styles */
+        .tabs-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .tabs-header {
+            display: flex;
+            background: #f0f0f0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            color: #666;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            background: #e8e8e8;
+        }
+
+        .tab-button.active {
+            color: white;
+        }
+
+        .tab-button.inventory {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-button.inventory.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-button.orders {
+            background: linear-gradient(135deg, #00a8e8 0%, #0066cc 100%);
+            color: white;
+        }
+
+        .tab-button.orders.active {
+            background: linear-gradient(135deg, #00a8e8 0%, #0066cc 100%);
+            box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .tab-button {
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Dashboard - Quản lý Kho máu</h1>
+        
+        <div class="controls">
+            <button class="btn btn-primary" onclick="openAddInventoryModal()">➕ Thêm Kho máu</button>
+            <button class="btn btn-primary" onclick="openAddOrderModal()">➕ Thêm Đơn hàng</button>
+            <button class="btn" onclick="loadAllData()">🔄 Refresh dữ liệu</button>
+        </div>
+
+        <div id="message" style="display: none;"></div>
+
+        <!-- Tabs Container -->
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-button inventory active" onclick="switchTab('inventory')">📦 Kho máu (Inventory)</button>
+                <button class="tab-button orders" onclick="switchTab('orders')">🏥 Đơn hàng bệnh nhân</button>
+            </div>
+            
+            <!-- Inventory Tab -->
+            <div id="inventoryTab" class="tab-content active">
+                <div class="section">
+                    <div class="section-header">
+                        📦 Kho máu (Inventory)
+                        <button class="btn btn-primary btn-small" onclick="openAddInventoryModal()">➕ Thêm mới</button>
+                    </div>
+                    <div class="section-content" id="inventoryContent">
+                        <div class="loading"><div class="spinner"></div><p>Đang tải dữ liệu...</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="tab-content">
+                <div class="section">
+                    <div class="section-header">
+                        🏥 Đơn hàng bệnh nhân (Patient Orders)
+                        <button class="btn btn-primary btn-small" onclick="openAddOrderModal()">➕ Thêm mới</button>
+                    </div>
+                    <div class="section-content" id="ordersContent">
+                        <div class="loading"><div class="spinner"></div><p>Đang tải dữ liệu...</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Add/Edit Inventory -->
+    <div id="inventoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close" onclick="closeInventoryModal()">&times;</span>
+                <div id="inventoryModalTitle">Thêm Kho máu mới</div>
+            </div>
+            <form id="inventoryForm" onsubmit="saveInventory(event)">
+                <div class="form-group">
+                    <label>ABO:</label>
+                    <select id="invABO" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="AB">AB</option>
+                        <option value="O">O</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rh:</label>
+                    <select id="invRh" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="+">Dương (+)</option>
+                        <option value="-">Âm (-)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mã loại (ElementID):</label>
+                    <input type="text" id="invElementID" required placeholder="VD: HTDL, HCL">
+                </div>
+                <div class="form-group">
+                    <label>Tên loại (ElementName):</label>
+                    <input type="text" id="invElementName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Thể tích (ml):</label>
+                        <input type="number" id="invVolume" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng:</label>
+                        <input type="number" id="invQuantity" required min="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" onclick="closeInventoryModal()">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Add/Edit Patient Order -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close" onclick="closeOrderModal()">&times;</span>
+                <div id="orderModalTitle">Thêm Đơn hàng mới</div>
+            </div>
+            <form id="orderForm" onsubmit="saveOrder(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>PID:</label>
+                        <input type="text" id="ordPID" required>
+                    </div>
+                    <div class="form-group">
+                        <label>OrderID:</label>
+                        <input type="text" id="ordOrderID" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tên bệnh nhân: <span style="color:red;">*</span></label>
+                    <input type="text" id="ordPatientName" required>
+                </div>
+                <div class="form-group">
+                    <label>Số bảo hiểm:</label>
+                    <input type="text" id="ordInsureNumber">
+                </div>
+                <div class="form-group">
+                    <label>Mã điều trị:</label>
+                    <input type="text" id="ordTreatmentCode">
+                </div>
+                <div class="form-group">
+                    <label>Ngày đặt hàng: <span style="color:red;">*</span></label>
+                    <input type="datetime-local" id="ordOrderDate" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tuổi: <span style="color:red;">*</span></label>
+                        <input type="number" id="ordAge" required min="0" max="150">
+                    </div>
+                    <div class="form-group">
+                        <label>Giới tính: <span style="color:red;">*</span></label>
+                        <select id="ordSex" required>
+                            <option value="">-- Chọn --</option>
+                            <option value="M">Nam (M)</option>
+                            <option value="F">Nữ (F)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nhóm máu:</label>
+                        <select id="ordBloodGroup">
+                            <option value="">-- Chọn --</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="O">O</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rh:</label>
+                        <select id="ordRh">
+                            <option value="">-- Chọn --</option>
+                            <option value="+">Dương (+)</option>
+                            <option value="-">Âm (-)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="ordAddress">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ID bác sĩ:</label>
+                        <input type="text" id="ordDoctorID">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên bác sĩ:</label>
+                        <input type="text" id="ordDoctorName">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ID vị trí:</label>
+                        <input type="text" id="ordLocationID">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên vị trí:</label>
+                        <input type="text" id="ordLocationName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Chi tiết đơn hàng (JSON):</label>
+                    <textarea id="ordListOrder" placeholder='[{"Quantity":"1","ElementID":"HTDL","Volume":300}]'></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" onclick="closeOrderModal()">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const baseUrl = window.location.origin;
+        let currentEditIndex = -1;
+        let currentEditType = null;
+
+        // Tab switching function
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.getElementById('inventoryTab').classList.remove('active');
+            document.getElementById('ordersTab').classList.remove('active');
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            if (tabName === 'inventory') {
+                document.getElementById('inventoryTab').classList.add('active');
+                document.querySelector('.tab-button.inventory').classList.add('active');
+                // Make sure inventory button is styled
+                document.querySelector('.tab-button.inventory').style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                document.querySelector('.tab-button.inventory').style.color = 'white';
+                document.querySelector('.tab-button.orders').style.background = '';
+                document.querySelector('.tab-button.orders').style.color = '';
+            } else if (tabName === 'orders') {
+                document.getElementById('ordersTab').classList.add('active');
+                document.querySelector('.tab-button.orders').classList.add('active');
+                // Make sure orders button is styled
+                document.querySelector('.tab-button.orders').style.background = 'linear-gradient(135deg, #00a8e8 0%, #0066cc 100%)';
+                document.querySelector('.tab-button.orders').style.color = 'white';
+                document.querySelector('.tab-button.inventory').style.background = '';
+                document.querySelector('.tab-button.inventory').style.color = '';
+            }
+            
+            // Lưu tab hiện tại vào localStorage
+            localStorage.setItem('activeTab', tabName);
+        }
+        
+        // Function to restore active tab from localStorage
+        function restoreActiveTab() {
+            const savedTab = localStorage.getItem('activeTab') || 'inventory';
+            switchTab(savedTab);
+        }
+
+        async function loadAllData() {
+            try {
+                const url = `${baseUrl}/LisReceiver/web/GetAllData`;
+                console.log('Fetching from:', url);
+                
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Data received:', data);
+                displayData(data);
+            } catch (error) {
+                console.error('Error details:', error);
+                document.getElementById('inventoryContent').innerHTML = `<div class="error">❌ Lỗi tải dữ liệu: ${error.message}</div>`;
+                document.getElementById('ordersContent').innerHTML = `<div class="error">❌ Lỗi tải dữ liệu: ${error.message}</div>`;
+            }
+        }
+
+        function displayData(data) {
+            console.log('displayData called with:', data);
+            localStorage.setItem('lastData', JSON.stringify(data));
+            
+            // Support both camelCase and PascalCase for Inventory
+            const inventory = data.inventory || data.Inventory || [];
+            
+            // Display Inventory table in inventory tab
+            if (Array.isArray(inventory) && inventory.length > 0) {
+                document.getElementById('inventoryContent').innerHTML = createInventoryTableContent(inventory);
+            } else {
+                document.getElementById('inventoryContent').innerHTML = '<div class="empty">Không có dữ liệu</div>';
+            }
+
+            // Support both camelCase and PascalCase for PatientOrders
+            const patientOrders = data.patientOrders || data.PatientOrders || [];
+            console.log('PatientOrders found:', patientOrders);
+            
+            // Display PatientOrders table in orders tab
+            if (Array.isArray(patientOrders) && patientOrders.length > 0) {
+                document.getElementById('ordersContent').innerHTML = createPatientOrdersTableContent(patientOrders);
+            } else {
+                document.getElementById('ordersContent').innerHTML = '<div class="empty">Không có dữ liệu</div>';
+            }
+            
+            // Restore the active tab after displaying data
+            restoreActiveTab();
+        }
+
+        function createInventoryTableContent(inventory) {
+            let html = '<table>';
+            html += '<thead><tr>';
+            html += '<th>ABO</th>';
+            html += '<th>Rh</th>';
+            html += '<th>Mã loại</th>';
+            html += '<th>Tên loại</th>';
+            html += '<th>Thể tích (ml)</th>';
+            html += '<th>Số lượng</th>';
+            html += '<th>Hành động</th>';
+            html += '</tr></thead>';
+            html += '<tbody>';
+
+            inventory.forEach((item, index) => {
+                html += '<tr>';
+                html += `<td>${item.abo || '-'}</td>`;
+                html += `<td>${item.rh || '-'}</td>`;
+                html += `<td>${item.elementID || '-'}</td>`;
+                html += `<td>${item.elementName || '-'}</td>`;
+                html += `<td>${item.volume || '-'}</td>`;
+                html += `<td><strong>${item.quantity || 0}</strong></td>`;
+                html += '<td class="actions">';
+                html += `<button class="btn btn-edit btn-small" onclick="editInventory(${index})">✏️ Sửa</button>`;
+                html += `<button class="btn btn-delete btn-small" onclick="deleteInventory(${index})">🗑️ Xóa</button>`;
+                html += '</td>';
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            html += `<div class="record-count">Tổng: <strong>${inventory.length}</strong> bản ghi</div>`;
+
+            return html;
+        }
+
+        function createPatientOrdersTableContent(orders) {
+            let html = '<table>';
+            html += '<thead><tr>';
+            html += '<th>ID BN</th>';
+            html += '<th>ID Đơn</th>';
+            html += '<th>Tên BN</th>';
+            html += '<th>Mã điều trị</th>';
+            html += '<th>Ngày đặt hàng</th>';
+            html += '<th>Tuổi</th>';
+            html += '<th>GT</th>';
+            html += '<th>Nhóm máu</th>';
+            html += '<th>Rh</th>';
+            html += '<th>ID Bác sĩ</th>';
+            html += '<th>Tên Bác sĩ</th>';
+            html += '<th>Chi tiết</th>';
+            html += '<th>Hành động</th>';
+            html += '</tr></thead>';
+            html += '<tbody>';
+
+            orders.forEach((order, index) => {
+                // Support both PascalCase (ListOrder) and camelCase (listOrder)
+                const listOrder = order.listOrder || order.ListOrder || [];
+                const orderDetails = listOrder.map(item => {
+                    const qty = item.quantity || item.Quantity || '';
+                    const elem = item.elementID || item.ElementID || '';
+                    const vol = item.volume || item.Volume || '';
+                    return `${qty}x ${elem} (${vol}ml)`;
+                }).join(', ') || 'N/A';
+
+                html += '<tr>';
+                html += `<td>${order.pid || order.PID || '-'}</td>`;
+                html += `<td>${order.orderID || order.OrderID || '-'}</td>`;
+                html += `<td>${order.patientName || order.PatientName || '-'}</td>`;
+                html += `<td>${order.treatmentCode || order.TREATMENT_CODE || '-'}</td>`;
+                html += `<td>${order.orderDate || order.OrderDate || '-'}</td>`;
+                html += `<td>${order.age || order.Age || '-'}</td>`;
+                html += `<td>${order.sex || order.Sex || '-'}</td>`;
+                html += `<td>${order.bloodGroup || order.BloodGroup || '-'}</td>`;
+                html += `<td>${order.rh || order.Rh || '-'}</td>`;
+                html += `<td>${order.doctorID || order.DoctorID || '-'}</td>`;
+                html += `<td>${order.doctorName || order.DoctorName || '-'}</td>`;
+                html += `<td>${orderDetails}</td>`;
+                html += '<td class="actions">';
+                html += `<button class="btn btn-edit btn-small" onclick="editOrder(${index})">✏️ Sửa</button>`;
+                html += `<button class="btn btn-delete btn-small" onclick="deleteOrder(${index})">🗑️ Xóa</button>`;
+                html += '</td>';
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            html += `<div class="record-count">Tổng: <strong>${orders.length}</strong> bản ghi</div>`;
+
+            return html;
+        }
+
+        // Inventory Modal Functions
+        function openAddInventoryModal() {
+            currentEditIndex = -1;
+            currentEditType = 'inventory';
+            document.getElementById('inventoryModalTitle').textContent = 'Thêm Kho máu mới';
+            document.getElementById('inventoryForm').reset();
+            document.getElementById('inventoryModal').classList.add('active');
+        }
+
+        function closeInventoryModal() {
+            document.getElementById('inventoryModal').classList.remove('active');
+        }
+
+        function editInventory(index) {
+            const data = JSON.parse(localStorage.getItem('lastData'));
+            const item = data.inventory[index];
+            
+            currentEditIndex = index;
+            currentEditType = 'inventory';
+            document.getElementById('inventoryModalTitle').textContent = 'Sửa Kho máu';
+            
+            document.getElementById('invABO').value = item.abo;
+            document.getElementById('invRh').value = item.rh;
+            document.getElementById('invElementID').value = item.elementID;
+            document.getElementById('invElementName').value = item.elementName;
+            document.getElementById('invVolume').value = item.volume;
+            document.getElementById('invQuantity').value = item.quantity;
+            
+            document.getElementById('inventoryModal').classList.add('active');
+        }
+
+        async function saveInventory(event) {
+            event.preventDefault();
+            
+            const inventory = {
+                abo: document.getElementById('invABO').value,
+                rh: document.getElementById('invRh').value,
+                elementID: document.getElementById('invElementID').value,
+                elementName: document.getElementById('invElementName').value,
+                volume: parseInt(document.getElementById('invVolume').value),
+                quantity: parseInt(document.getElementById('invQuantity').value)
+            };
+
+            try {
+                let url, method;
+                if (currentEditIndex === -1) {
+                    url = `${baseUrl}/LisReceiver/web/CreateInventory`;
+                    method = 'POST';
+                } else {
+                    url = `${baseUrl}/LisReceiver/web/UpdateInventory/${currentEditIndex}`;
+                    method = 'PUT';
+                }
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(inventory)
+                });
+
+                const result = await response.json();
+                if (result.isSuccess || result.IsSuccess) {
+                    showMessage('✅ ' + (result.message || result.Message), 'success');
+                    closeInventoryModal();
+                    setTimeout(loadAllData, 500);
+                } else {
+                    showMessage('❌ ' + (result.errorMessage || result.ErrorMessage), 'error');
+                }
+            } catch (error) {
+                showMessage('❌ Lỗi: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteInventory(index) {
+            if (confirm('Bạn chắc chắn muốn xóa kho máu này?')) {
+                try {
+                    const response = await fetch(`${baseUrl}/LisReceiver/web/DeleteInventory/${index}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json();
+                    if (result.isSuccess || result.IsSuccess) {
+                        showMessage('✅ ' + (result.message || result.Message), 'success');
+                        setTimeout(loadAllData, 500);
+                    } else {
+                        showMessage('❌ ' + (result.errorMessage || result.ErrorMessage), 'error');
+                    }
+                } catch (error) {
+                    showMessage('❌ Lỗi: ' + error.message, 'error');
+                }
+            }
+        }
+
+        // Order Modal Functions
+        function openAddOrderModal() {
+            currentEditIndex = -1;
+            currentEditType = 'order';
+            document.getElementById('orderModalTitle').textContent = 'Thêm Đơn hàng mới';
+            document.getElementById('orderForm').reset();
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.remove('active');
+        }
+
+        function editOrder(index) {
+            const data = JSON.parse(localStorage.getItem('lastData'));
+            // Support both camelCase and PascalCase
+            const orders = data.patientOrders || data.PatientOrders || [];
+            const order = orders[index];
+            
+            if (!order) {
+                console.error('Order not found at index:', index);
+                return;
+            }
+            
+            currentEditIndex = index;
+            currentEditType = 'order';
+            document.getElementById('orderModalTitle').textContent = 'Sửa Đơn hàng';
+            
+            // Support both PascalCase and camelCase
+            document.getElementById('ordPID').value = order.pid || order.PID || '';
+            document.getElementById('ordOrderID').value = order.orderID || order.OrderID || '';
+            document.getElementById('ordPatientName').value = order.patientName || order.PatientName || '';
+            document.getElementById('ordInsureNumber').value = order.insureNumber || order.InsureNumber || '';
+            document.getElementById('ordTreatmentCode').value = order.treatmentCode || order.TREATMENT_CODE || '';
+            document.getElementById('ordOrderDate').value = order.orderDate || order.OrderDate || '';
+            document.getElementById('ordAge').value = order.age || order.Age || '';
+            document.getElementById('ordSex').value = order.sex || order.Sex || '';
+            document.getElementById('ordBloodGroup').value = order.bloodGroup || order.BloodGroup || '';
+            document.getElementById('ordRh').value = order.rh || order.Rh || '';
+            document.getElementById('ordAddress').value = order.address || order.Address || '';
+            document.getElementById('ordDoctorID').value = order.doctorID || order.DoctorID || '';
+            document.getElementById('ordDoctorName').value = order.doctorName || order.DoctorName || '';
+            document.getElementById('ordLocationID').value = order.locationID || order.LocationID || '';
+            document.getElementById('ordLocationName').value = order.locationName || order.LocationName || '';
+            document.getElementById('ordListOrder').value = JSON.stringify(order.listOrder || order.ListOrder || []);
+            
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        async function saveOrder(event) {
+            event.preventDefault();
+            
+            let listOrder = [];
+            try {
+                const listOrderText = document.getElementById('ordListOrder').value.trim();
+                if (listOrderText) {
+                    listOrder = JSON.parse(listOrderText);
+                }
+            } catch (e) {
+                showMessage('❌ Chi tiết đơn hàng không hợp lệ JSON', 'error');
+                return;
+            }
+
+            const order = {
+                pid: document.getElementById('ordPID').value,
+                orderID: document.getElementById('ordOrderID').value,
+                patientName: document.getElementById('ordPatientName').value,
+                insureNumber: document.getElementById('ordInsureNumber').value,
+                treatmentCode: document.getElementById('ordTreatmentCode').value,
+                orderDate: document.getElementById('ordOrderDate').value,
+                age: document.getElementById('ordAge').value,
+                sex: document.getElementById('ordSex').value,
+                bloodGroup: document.getElementById('ordBloodGroup').value,
+                rh: document.getElementById('ordRh').value,
+                address: document.getElementById('ordAddress').value,
+                doctorID: document.getElementById('ordDoctorID').value,
+                doctorName: document.getElementById('ordDoctorName').value,
+                locationID: document.getElementById('ordLocationID').value,
+                locationName: document.getElementById('ordLocationName').value,
+                listOrder: listOrder
+            };
+
+            try {
+                let url, method;
+                if (currentEditIndex === -1) {
+                    url = `${baseUrl}/LisReceiver/web/CreatePatientOrder`;
+                    method = 'POST';
+                } else {
+                    url = `${baseUrl}/LisReceiver/web/UpdatePatientOrder/${currentEditIndex}`;
+                    method = 'PUT';
+                }
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(order)
+                });
+
+                const result = await response.json();
+                if (result.isSuccess || result.IsSuccess) {
+                    showMessage('✅ ' + (result.message || result.Message), 'success');
+                    closeOrderModal();
+                    setTimeout(loadAllData, 500);
+                } else {
+                    showMessage('❌ ' + (result.errorMessage || result.ErrorMessage), 'error');
+                }
+            } catch (error) {
+                showMessage('❌ Lỗi: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteOrder(index) {
+            if (confirm('Bạn chắc chắn muốn xóa đơn hàng này?')) {
+                try {
+                    const response = await fetch(`${baseUrl}/LisReceiver/web/DeletePatientOrder/${index}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json();
+                    if (result.isSuccess || result.IsSuccess) {
+                        showMessage('✅ ' + (result.message || result.Message), 'success');
+                        setTimeout(loadAllData, 500);
+                    } else {
+                        showMessage('❌ ' + (result.errorMessage || result.ErrorMessage), 'error');
+                    }
+                } catch (error) {
+                    showMessage('❌ Lỗi: ' + error.message, 'error');
+                }
+            }
+        }
+
+        function showMessage(msg, type) {
+            const msgDiv = document.getElementById('message');
+            msgDiv.textContent = msg;
+            msgDiv.className = type;
+            msgDiv.style.display = 'block';
+            setTimeout(() => {
+                msgDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        // Load data when page loads
+        window.addEventListener('load', () => {
+            loadAllData();
+            // Restore active tab after a short delay to ensure DOM is ready
+            setTimeout(restoreActiveTab, 100);
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const inventoryModal = document.getElementById('inventoryModal');
+            const orderModal = document.getElementById('orderModal');
+            if (event.target == inventoryModal) {
+                inventoryModal.classList.remove('active');
+            }
+            if (event.target == orderModal) {
+                orderModal.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

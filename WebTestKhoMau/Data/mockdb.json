@@ -1,0 +1,930 @@
+{
+  "Inventory": [
+    {
+      "ABO": "A",
+      "Rh": "\u002B",
+      "ElementID": "5350",
+      "ElementName": "Kh\u1ED1i h\u1ED3ng c\u1EA7u t\u1EEB 350 ml m\u00E1u to\u00E0n ph\u1EA7n (\u0110\u00E3 bao g\u1ED3m chi ph\u00ED x\u00E9t nghi\u1EC7m NAT v\u00E0 chi ph\u00ED x\u00E9t nghi\u1EC7m s\u00E0ng l\u1ECDc kh\u00E1ng th\u1EC3 b\u1EA5t th\u01B0\u1EDDng)",
+      "Volume": 350,
+      "Quantity": 22,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "AB",
+      "Rh": "\u002B",
+      "ElementID": "5350",
+      "ElementName": "Kh\u1ED1i h\u1ED3ng c\u1EA7u t\u1EEB 350 ml m\u00E1u to\u00E0n ph\u1EA7n (\u0110\u00E3 bao g\u1ED3m chi ph\u00ED x\u00E9t nghi\u1EC7m NAT v\u00E0 chi ph\u00ED x\u00E9t nghi\u1EC7m s\u00E0ng l\u1ECDc kh\u00E1ng th\u1EC3 b\u1EA5t th\u01B0\u1EDDng)",
+      "Volume": 350,
+      "Quantity": 85,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "B ",
+      "Rh": "\u002B",
+      "ElementID": "5350",
+      "ElementName": "Kh\u1ED1i h\u1ED3ng c\u1EA7u t\u1EEB 350 ml m\u00E1u to\u00E0n ph\u1EA7n (\u0110\u00E3 bao g\u1ED3m chi ph\u00ED x\u00E9t nghi\u1EC7m NAT v\u00E0 chi ph\u00ED x\u00E9t nghi\u1EC7m s\u00E0ng l\u1ECDc kh\u00E1ng th\u1EC3 b\u1EA5t th\u01B0\u1EDDng)",
+      "Volume": 350,
+      "Quantity": 16,
+      "BooldPlan": 553
+    },
+    {
+      "ABO": "O ",
+      "Rh": "\u002B",
+      "ElementID": "5350",
+      "ElementName": "Kh\u1ED1i h\u1ED3ng c\u1EA7u t\u1EEB 350 ml m\u00E1u to\u00E0n ph\u1EA7n (\u0110\u00E3 bao g\u1ED3m chi ph\u00ED x\u00E9t nghi\u1EC7m NAT v\u00E0 chi ph\u00ED x\u00E9t nghi\u1EC7m s\u00E0ng l\u1ECDc kh\u00E1ng th\u1EC3 b\u1EA5t th\u01B0\u1EDDng)",
+      "Volume": 350,
+      "Quantity": 18,
+      "BooldPlan": 553
+    },
+    {
+      "ABO": "A ",
+      "Rh": "\u002B",
+      "ElementID": "5356",
+      "ElementName": "Huy\u1EBFt t\u01B0\u01A1ng t\u01B0\u01A1i \u0111\u00F4ng l\u1EA1nh 200 ml",
+      "Volume": 200,
+      "Quantity": 31,
+      "BooldPlan": 42
+    },
+    {
+      "ABO": "AB",
+      "Rh": "\u002B",
+      "ElementID": "5356",
+      "ElementName": "Huy\u1EBFt t\u01B0\u01A1ng t\u01B0\u01A1i \u0111\u00F4ng l\u1EA1nh 200 ml",
+      "Volume": 200,
+      "Quantity": 21,
+      "BooldPlan": 42
+    },
+    {
+      "ABO": "B ",
+      "Rh": "\u002B",
+      "ElementID": "5356",
+      "ElementName": "Huy\u1EBFt t\u01B0\u01A1ng t\u01B0\u01A1i \u0111\u00F4ng l\u1EA1nh 200 ml",
+      "Volume": 200,
+      "Quantity": 31,
+      "BooldPlan": 42
+    },
+    {
+      "ABO": "O ",
+      "Rh": "\u002B",
+      "ElementID": "5356",
+      "ElementName": "Huy\u1EBFt t\u01B0\u01A1ng t\u01B0\u01A1i \u0111\u00F4ng l\u1EA1nh 200 ml",
+      "Volume": 200,
+      "Quantity": 34,
+      "BooldPlan": 42
+    },
+    {
+      "ABO": "A",
+      "Rh": "\u002B",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 12,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "B",
+      "Rh": "\u002B",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 100,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "O",
+      "Rh": "\u002B",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 10,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "AB",
+      "Rh": "\u002B",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 7,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "AB",
+      "Rh": "-",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 2,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "A",
+      "Rh": "-",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 4,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "B",
+      "Rh": "-",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 5,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "O",
+      "Rh": "-",
+      "ElementID": "HTDL",
+      "ElementName": "HUY\u1EBET T\u01AF\u01A0NG T\u01AF\u01A0I \u0110\u00D4NG L\u1EA0NH",
+      "Volume": 150,
+      "Quantity": 100,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "A",
+      "Rh": "\u002B",
+      "ElementID": "HCL",
+      "ElementName": "KH\u1ED0I H\u1ED2NG C\u1EA6U L\u1EAEC",
+      "Volume": 250,
+      "Quantity": 15,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "B",
+      "Rh": "\u002B",
+      "ElementID": "HCL",
+      "ElementName": "KH\u1ED0I H\u1ED2NG C\u1EA6U L\u1EAEC",
+      "Volume": 250,
+      "Quantity": 12,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "O",
+      "Rh": "\u002B",
+      "ElementID": "HCL",
+      "ElementName": "KH\u1ED0I H\u1ED2NG C\u1EA6U L\u1EAEC",
+      "Volume": 250,
+      "Quantity": 18,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "AB",
+      "Rh": "\u002B",
+      "ElementID": "HCL",
+      "ElementName": "KH\u1ED0I H\u1ED2NG C\u1EA6U L\u1EAEC",
+      "Volume": 250,
+      "Quantity": 5,
+      "BooldPlan": 0
+    },
+    {
+      "ABO": "A",
+      "Rh": "\u002B",
+      "ElementID": "TC",
+      "ElementName": "KH\u1ED0I TI\u1EC2U C\u1EA6U",
+      "Volume": 300,
+      "Quantity": 6,
+      "BooldPlan": 0
+    }
+  ],
+  "PatientOrders": [
+    {
+      "PID": "19046237",
+      "OrderID": "B1_16PL1900215",
+      "PatientName": "LONG PTTT",
+      "InsureNumber": null,
+      "TREATMENT_CODE": "25112408362323637902597",
+      "OrderDate": "2022-04-14 15:12:01",
+      "Age": "18",
+      "Sex": "M",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": null,
+      "DoctorID": "43809",
+      "DoctorName": "Nguy\u1EC5n L\u00EA Tu\u1EA5n Ki\u1EC7t",
+      "LocationID": null,
+      "LocationName": null,
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "HTDL",
+          "Volume": 150
+        }
+      ]
+    },
+    {
+      "PID": "19046237",
+      "OrderID": "B1_16PL1900215",
+      "PatientName": "LONG PTTT",
+      "InsureNumber": null,
+      "TREATMENT_CODE": "25112408362323637902597",
+      "OrderDate": "2022-04-14 15:12:01",
+      "Age": "18",
+      "Sex": "M",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": null,
+      "DoctorID": "43809",
+      "DoctorName": "Nguy\u1EC5n L\u00EA Tu\u1EA5n Ki\u1EC7t",
+      "LocationID": null,
+      "LocationName": null,
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "HTDL",
+          "Volume": 150
+        },
+        {
+          "Quantity": "3",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "19046237",
+      "OrderID": "B1_16PL1900215",
+      "PatientName": "LONG PTTT",
+      "InsureNumber": null,
+      "TREATMENT_CODE": "25112408362323637902597",
+      "OrderDate": "2022-04-14 15:12:01",
+      "Age": "18",
+      "Sex": "M",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": null,
+      "DoctorID": "43809",
+      "DoctorName": "Nguy\u1EC5n L\u00EA Tu\u1EA5n Ki\u1EC7t",
+      "LocationID": null,
+      "LocationName": null,
+      "ListOrder": [
+        {
+          "Quantity": "5",
+          "ElementID": "HTDL",
+          "Volume": 150
+        }
+      ]
+    },
+    {
+      "PID": "0000127412",
+      "OrderID": "000000877004",
+      "PatientName": "TI\u1EBEP NH\u1EACN CK",
+      "InsureNumber": "",
+      "TREATMENT_CODE": "000000152157",
+      "OrderDate": "2026-02-11 16:43:00",
+      "Age": "31",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "Ph\u01B0\u1EDDng 13, Qu\u1EADn 10, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "phuongnm",
+      "DoctorName": "phuongnm",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "5",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000127412",
+      "OrderID": "000000877008",
+      "PatientName": "TI\u1EBEP NH\u1EACN CK",
+      "InsureNumber": "",
+      "TREATMENT_CODE": "000000152157",
+      "OrderDate": "2026-02-11 16:43:00",
+      "Age": "31",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "Ph\u01B0\u1EDDng 13, Qu\u1EADn 10, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "phuongnm",
+      "DoctorName": "phuongnm",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "5",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000132426",
+      "OrderID": "000000877011",
+      "PatientName": "SINH K\u00CA \u0110\u01A0N TR\u1EA6N 100",
+      "InsureNumber": "HC3434331122333",
+      "TREATMENT_CODE": "000000159827",
+      "OrderDate": "2026-02-11 17:28:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Bi\u00EAn, An Giang",
+      "DoctorID": "tungdp",
+      "DoctorName": "tung",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "11",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877027",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 08:11:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877028",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 08:17:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "B",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877037",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 08:45:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "O",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877038",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 08:54:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "O",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000132409",
+      "OrderID": "000000877062",
+      "PatientName": "SINH  THANH TO\u00C1N 10",
+      "InsureNumber": "DN4433424324223",
+      "TREATMENT_CODE": "000000159806",
+      "OrderDate": "2026-02-12 11:48:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Minh, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877064",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 11:59:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "O",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        },
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877078",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 14:05:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877079",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 14:14:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "O",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0000128765",
+      "OrderID": "000000877080",
+      "PatientName": "L\u00DD DO",
+      "InsureNumber": "DN4125553633355",
+      "TREATMENT_CODE": "000000154166",
+      "OrderDate": "2026-02-12 14:17:00",
+      "Age": "37",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": ", Qu\u1EADn 11, Ph\u01B0\u1EDDng 14, Qu\u1EADn 8, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000128765",
+      "OrderID": "000000877081",
+      "PatientName": "L\u00DD DO",
+      "InsureNumber": "DN4125553633355",
+      "TREATMENT_CODE": "000000154166",
+      "OrderDate": "2026-02-12 14:18:00",
+      "Age": "37",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": ", Qu\u1EADn 11, Ph\u01B0\u1EDDng 14, Qu\u1EADn 8, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877084",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 14:39:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877085",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 14:45:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "B",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877086",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 14:47:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000131854",
+      "OrderID": "000000877087",
+      "PatientName": "SINH CAPD 1999",
+      "InsureNumber": "HC3434234234775",
+      "TREATMENT_CODE": "000000158968",
+      "OrderDate": "2026-02-12 15:32:00",
+      "Age": "27",
+      "Sex": "M",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ph\u00FA, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877088",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 15:32:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000131854",
+      "OrderID": "000000877089",
+      "PatientName": "SINH CAPD 1999",
+      "InsureNumber": "HC3434234234775",
+      "TREATMENT_CODE": "000000158968",
+      "OrderDate": "2026-02-12 15:33:00",
+      "Age": "27",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ph\u00FA, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000131854",
+      "OrderID": "000000877092",
+      "PatientName": "SINH CAPD 1999",
+      "InsureNumber": "HC3434234234775",
+      "TREATMENT_CODE": "000000158968",
+      "OrderDate": "2026-02-12 15:42:00",
+      "Age": "27",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ph\u00FA, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000128484",
+      "OrderID": "000000877093",
+      "PatientName": "\u0110\u00C1",
+      "InsureNumber": "",
+      "TREATMENT_CODE": "000000153637",
+      "OrderDate": "2026-02-12 15:43:00",
+      "Age": "22",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "Ph\u01B0\u1EDDng 16, Qu\u1EADn 11, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "phuongnm",
+      "DoctorName": "phuongnm",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000128484",
+      "OrderID": "000000877095",
+      "PatientName": "\u0110\u00C1",
+      "InsureNumber": "",
+      "TREATMENT_CODE": "000000153637",
+      "OrderDate": "2026-02-12 15:58:00",
+      "Age": "22",
+      "Sex": "M",
+      "BloodGroup": "AB",
+      "Rh": "\u002B",
+      "Address": "Ph\u01B0\u1EDDng 16, Qu\u1EADn 11, H\u1ED3 Ch\u00ED Minh",
+      "DoctorID": "phuongnm",
+      "DoctorName": "phuongnm",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "2",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877096",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 16:12:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877099",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 16:21:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        },
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877104",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-12 16:33:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5350",
+          "Volume": 350
+        }
+      ]
+    },
+    {
+      "PID": "0000131854",
+      "OrderID": "000000877108",
+      "PatientName": "SINH CAPD 1999",
+      "InsureNumber": "HC3434234234775",
+      "TREATMENT_CODE": "000000158968",
+      "OrderDate": "2026-02-12 17:11:00",
+      "Age": "27",
+      "Sex": "M",
+      "BloodGroup": "B",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ph\u00FA, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "4",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    },
+    {
+      "PID": "0026000507",
+      "OrderID": "000000877109",
+      "PatientName": "SINH K\u00CA M\u00C1U 1",
+      "InsureNumber": "HC3432423355211",
+      "TREATMENT_CODE": "000026000727",
+      "OrderDate": "2026-02-13 07:37:00",
+      "Age": "27",
+      "Sex": "F",
+      "BloodGroup": "A",
+      "Rh": "\u002B",
+      "Address": "X\u00E3 An Ch\u00E2u, An Giang",
+      "DoctorID": "hanbth",
+      "DoctorName": "B\u00F9i Th\u1ECB H\u1ED3ng H\u00E2n",
+      "LocationID": "011",
+      "LocationName": "bu\u1ED3ng n\u1ED9i tr\u00FA 1",
+      "ListOrder": [
+        {
+          "Quantity": "1",
+          "ElementID": "5356",
+          "Volume": 200
+        }
+      ]
+    }
+  ]
+}

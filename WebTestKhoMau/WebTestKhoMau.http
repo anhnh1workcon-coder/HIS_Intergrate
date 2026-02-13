@@ -1,0 +1,66 @@
+@BaseUrl = http://localhost:5268
+@ContentType = application/json
+
+### Get Inventory (Search for B+ blood, HTDL, 150 volume)
+POST {{BaseUrl}}/LisReceiver/web/GetInventory
+Content-Type: {{ContentType}}
+
+{
+  "Rh": "+",
+  "ABO": "B",
+  "ElementID": "HTDL",
+  "Volume": 150
+}
+
+###
+
+### Get Inventory (Search for A+ blood, HCL, 250 volume)
+POST {{BaseUrl}}/LisReceiver/web/GetInventory
+Content-Type: {{ContentType}}
+
+{
+  "Rh": "+",
+  "ABO": "A",
+  "ElementID": "HCL",
+  "Volume": 250
+}
+
+###
+
+### Save Patient Order (New order)
+POST {{BaseUrl}}/LisReceiver/web/SavePatient
+Content-Type: {{ContentType}}
+
+{
+  "PID": "19046238",
+  "OrderID": "B2_16PL1900216",
+  "PatientName": "NGUYEN VAN A",
+  "TREATMENT_CODE": "25112408362323637902598",
+  "OrderDate": "2024-02-03 14:30:00",
+  "Age": "25",
+  "Sex": "M",
+  "BloodGroup": "O",
+  "Rh": "+",
+  "DoctorID": "43810",
+  "DoctorName": "Trần Văn B",
+  "ListOrder": [
+    {
+      "Quantity": "2",
+      "ElementID": "HTDL",
+      "Volume": 300
+    },
+    {
+      "Quantity": "1",
+      "ElementID": "HCL",
+      "Volume": 250
+    }
+  ]
+}
+
+###
+
+### Get all Patient Orders
+GET {{BaseUrl}}/LisReceiver/web/GetPatientOrders
+Accept: {{ContentType}}
+
+###
