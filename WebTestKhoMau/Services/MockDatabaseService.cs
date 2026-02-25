@@ -579,7 +579,57 @@ namespace WebTestKhoMau.Services
                     }
                 }
 
-                // Trừ tồn kho cho từng item trong ListOrder
+                // Lấy danh sách patient orders
+                var patientOrders = new List<PatientOrderRequest>();
+                if (root.TryGetProperty("PatientOrders", out var ordersElement))
+                {
+                    foreach (var orderItem in ordersElement.EnumerateArray())
+                    {
+                        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                        var order = JsonSerializer.Deserialize<PatientOrderRequest>(orderItem.GetRawText(), options);
+                        if (order != null) patientOrders.Add(order);
+                    }
+                }
+
+                // Kiểm tra xem OrderID đã tồn tại chưa (để xác định CREATE hay UPDATE)
+                var existingOrder = patientOrders.FirstOrDefault(o => o.OrderID?.Trim() == request.OrderID?.Trim());
+                
+                if (existingOrder != null)
+                {
+                    // UPDATE: Hoàn trả tồn kho từ order cũ trước
+                    _logger.LogInformation($"Updating existing order: {request.OrderID}");
+                    
+                    if (existingOrder.ListOrder != null && existingOrder.ListOrder.Count > 0)
+                    {
+                        foreach (var oldOrderItem in existingOrder.ListOrder)
+                        {
+                            int oldQuantity = int.Parse(oldOrderItem.Quantity ?? "0");
+                            
+                            // Tìm item tồn kho tương ứng với order cũ
+                            var matchedInventory = inventory.FirstOrDefault(inv =>
+                                inv.ABO?.Trim() == existingOrder.BloodGroup?.Trim() &&
+                                inv.Rh?.Trim() == existingOrder.Rh?.Trim() &&
+                                inv.ElementID?.Trim() == oldOrderItem.ElementID?.Trim() &&
+                                inv.Volume == oldOrderItem.Volume);
+
+                            if (matchedInventory != null)
+                            {
+                                // Hoàn trả số lượng từ order cũ
+                                matchedInventory.Quantity += oldQuantity;
+                                _logger.LogInformation($"Restored {oldQuantity} units of {oldOrderItem.ElementID} ({existingOrder.BloodGroup}{existingOrder.Rh}, {oldOrderItem.Volume}ml). Current: {matchedInventory.Quantity}");
+                            }
+                        }
+                    }
+                    
+                    // Xóa order cũ khỏi danh sách
+                    patientOrders.Remove(existingOrder);
+                }
+                else
+                {
+                    _logger.LogInformation($"Creating new order: {request.OrderID}");
+                }
+
+                // Trừ tồn kho cho order mới/cập nhật
                 if (request.ListOrder != null && request.ListOrder.Count > 0)
                 {
                     foreach (var orderItem in request.ListOrder)
@@ -607,18 +657,7 @@ namespace WebTestKhoMau.Services
                     }
                 }
 
-                // Lưu lại patient order
-                var patientOrders = new List<PatientOrderRequest>();
-                if (root.TryGetProperty("PatientOrders", out var ordersElement))
-                {
-                    foreach (var orderItem in ordersElement.EnumerateArray())
-                    {
-                        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                        var order = JsonSerializer.Deserialize<PatientOrderRequest>(orderItem.GetRawText(), options);
-                        if (order != null) patientOrders.Add(order);
-                    }
-                }
-
+                // Thêm order mới/cập nhật vào danh sách
                 patientOrders.Add(request);
 
                 // Lưu toàn bộ dữ liệu

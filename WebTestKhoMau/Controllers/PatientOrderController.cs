@@ -22,7 +22,9 @@ namespace WebTestKhoMau.Controllers
         }
 
         /// <summary>
-        /// Save patient order with blood transfusion details
+        /// Save or update patient order with blood transfusion details.
+        /// If OrderID already exists, the order will be updated and inventory will be adjusted.
+        /// If OrderID is new, a new order will be created.
         /// </summary>
         /// <param name="request">Patient order request containing patient and order information</param>
         /// <returns>Success or failure response</returns>
