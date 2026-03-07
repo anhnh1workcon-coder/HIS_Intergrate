@@ -4,7 +4,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+// Configure controllers and JSON serializer to use PascalCase (preserve C# property names)
+builder.Services.AddControllers()
+    .AddJsonOptions(o =>
+    {
+        // Ensure returned JSON preserves PascalCase property names (default C# naming)
+        o.JsonSerializerOptions.PropertyNamingPolicy = null;
+        // Keep dictionary keys as defined as well
+        o.JsonSerializerOptions.DictionaryKeyPolicy = null;
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
